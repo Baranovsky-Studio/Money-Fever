@@ -1,4 +1,3 @@
-using GameAnalyticsSDK;
 using Kuhpik;
 using NaughtyAttributes;
 using Pocket_Snake;
@@ -18,8 +17,6 @@ public class LoseUIScreen : UIScreen
 
     private void OnButtonTryAgainClick()
     {
-        GameAnalytics.NewDesignEvent("Level losed:" + Bootstrap.Instance.PlayerData.LevelId);
-        GameAnalytics.NewDesignEvent("Match losed:" + Bootstrap.Instance.PlayerData.GameId);
         
         Bootstrap.Instance.ChangeGameState(GameStateID.Menu);
         Bootstrap.Instance.GetSystem<LoadLevelSystem>().LoadLevel();

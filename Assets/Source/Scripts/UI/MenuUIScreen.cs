@@ -1,4 +1,3 @@
-using GameAnalyticsSDK;
 using Kuhpik;
 using NaughtyAttributes;
 using UnityEngine;
@@ -25,8 +24,6 @@ public class MenuUIScreen : UIScreen
 
     private void OnButtonPlayClick()
     {
-        GameAnalytics.NewDesignEvent("Level started:" + Bootstrap.Instance.PlayerData.LevelId);
-        GameAnalytics.NewDesignEvent("Match started:" + Bootstrap.Instance.PlayerData.GameId);
         Bootstrap.Instance.ChangeGameState(GameStateID.Game);
     }
 }

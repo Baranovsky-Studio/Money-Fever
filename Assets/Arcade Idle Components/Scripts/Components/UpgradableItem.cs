@@ -1,5 +1,4 @@
-﻿using GameAnalyticsSDK;
-using Idle_Arcade_Components.Scripts.Components;
+﻿using Idle_Arcade_Components.Scripts.Components;
 using Kuhpik;
 using NaughtyAttributes;
 using UnityEngine;
@@ -148,8 +147,6 @@ namespace BaranovskyStudio
 
             UpgradeLevel = data.UpgradeLevel;
             
-            GameAnalytics.NewDesignEvent("Upgraded " + gameObject.name + ": " + UpgradeLevel);
-
             OnUpgradeItem?.Invoke(data.UpgradeLevel);
             CalculatePrice();
             UpdateState();

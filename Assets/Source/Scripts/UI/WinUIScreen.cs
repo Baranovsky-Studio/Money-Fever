@@ -1,5 +1,4 @@
 using BaranovskyStudio;
-using GameAnalyticsSDK;
 using Kuhpik;
 using NaughtyAttributes;
 using Pocket_Snake;
@@ -25,9 +24,6 @@ public class WinUIScreen : UIScreen
 
     public override void Open()
     {
-        GameAnalytics.NewDesignEvent("Level finished:" + Bootstrap.Instance.PlayerData.LevelId);
-        GameAnalytics.NewDesignEvent("Match finished:" + Bootstrap.Instance.PlayerData.GameId);
-        
         Bootstrap.Instance.PlayerData.GameId++;
         Bootstrap.Instance.PlayerData.LevelId++;
         Bootstrap.Instance.GetSystem<ResourcesSystem>().AddResourceCount(ResourcesSystem.ResourceType.Banknotes, (int) Bootstrap.Instance.GameData.Dollars);
@@ -46,7 +42,6 @@ public class WinUIScreen : UIScreen
 
     private void OnButtonNextClick()
     {
-        GameAnalytics.NewDesignEvent("Win_next");
         Bootstrap.Instance.ChangeGameState(GameStateID.Menu);
         Bootstrap.Instance.GetSystem<LoadLevelSystem>().LoadLevel();
         Advertisement.Instance.ShowInterstitial();
@@ -54,7 +49,6 @@ public class WinUIScreen : UIScreen
 
     private void OnButtonClaimX2Click()
     {
-        GameAnalytics.NewDesignEvent("Win_claim_x2");
         Advertisement.Instance.ShowRewarded(99);
     }
     
@@ -66,7 +60,6 @@ public class WinUIScreen : UIScreen
             
             _claimX2.gameObject.SetActive(false);
             _counter.SetValue((int) Bootstrap.Instance.GameData.Dollars * 2);
-            GameAnalytics.NewDesignEvent("Win_claimed_x2");
         }
     }
 }
