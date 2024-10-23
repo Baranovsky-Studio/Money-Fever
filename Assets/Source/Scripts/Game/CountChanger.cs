@@ -35,19 +35,19 @@ public class CountChanger : MonoBehaviour
         switch (_changerType)
         {
             case ChangerType.Plus:
-                _text.text = $"+${_count}";
+                _text.text = $"+{_count}";
                 _meshRenderer.material = _blue;
                 break;
             case ChangerType.Minus:
-                _text.text = $"-${_count}";
+                _text.text = $"-{_count}";
                 _meshRenderer.material = _red;
                 break;
             case ChangerType.Multiply:
-                _text.text = $"x${_count}";
+                _text.text = $"x{_count}";
                 _meshRenderer.material = _blue;
                 break;
             case ChangerType.Divide:
-                _text.text = $"÷${_count}";
+                _text.text = $"÷{_count}";
                 _meshRenderer.material = _red;
                 break;
         }
@@ -55,28 +55,33 @@ public class CountChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cylinder"))
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Cart"))
         {
             if (Used) return;
-            var scaling = other.gameObject.GetComponent<PlayerScaling>();
-            if (scaling == null) return;
-            
+            var cart = other.gameObject.GetComponent<Cart>();
+            if (cart == null) return;
+
+            float count;
             switch (_changerType)
             {
                 case ChangerType.Plus:
-                    scaling.Dollars += _count;
+                    count = cart.GoldCount + _count;
+                    cart.GoldCount = (int) count;
                     break;
                 case ChangerType.Minus:
-                    scaling.Dollars -= _count;
+                    count = cart.GoldCount - _count;
+                    cart.GoldCount = (int) count;
                     break;
                 case ChangerType.Multiply:
-                    scaling.Dollars *= _count;
+                    count = cart.GoldCount * _count;
+                    cart.GoldCount = (int) count;
                     break;
                 case ChangerType.Divide:
-                    scaling.Dollars /= _count;
+                    count = cart.GoldCount / _count;
+                    cart.GoldCount = (int) count;
                     break;
             }
-
             Used = true;
         }
     }
