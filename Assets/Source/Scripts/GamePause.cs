@@ -1,11 +1,12 @@
 using Kuhpik;
 using UnityEngine;
+using YG;
 
 public class GamePause : MonoBehaviour
 {
     private void OnApplicationFocus(bool hasFocus)
     {
-        if (Advertisement.Instance.IsPlaying) return;
+        if (YandexGame.nowFullAd || YandexGame.nowVideoAd) return;
 
         Time.timeScale = hasFocus ? 1f : 0f;
         

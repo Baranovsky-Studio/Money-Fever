@@ -526,6 +526,7 @@
           <e p="FPS.cs" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Advertisement.cs" t="Include" />
+            <e p="CountChangers.cs" t="Include" />
             <e p="Game" t="Include">
               <e p="Changers.cs" t="Include" />
               <e p="CountChanger.cs" t="Include" />

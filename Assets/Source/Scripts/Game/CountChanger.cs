@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CountChanger : MonoBehaviour
 {
-    private enum ChangerType
+    public enum ChangerType
     {
         Plus,
         Minus,
@@ -19,13 +19,13 @@ public class CountChanger : MonoBehaviour
     private MeshRenderer _meshRenderer;
     
     [BoxGroup("SETTINGS")] [SerializeField]
-    private ChangerType _changerType;
+    public ChangerType _changerType;
     [BoxGroup("SETTINGS")] [SerializeField]
     private Material _red;
     [BoxGroup("SETTINGS")] [SerializeField]
     private Material _blue;
     [BoxGroup("SETTINGS")] [SerializeField]
-    private float _count;
+    public float _count;
 
     public Action OnUsed;
     public bool Used { get; set; }
