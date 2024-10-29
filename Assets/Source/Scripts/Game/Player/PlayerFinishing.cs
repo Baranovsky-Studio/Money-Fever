@@ -34,7 +34,7 @@ public class PlayerFinishing : MonoBehaviour
             if (platform.Equals(_platform))
             {
                 _scaling.OnFinish();
-                Bootstrap.Instance.GameData.Dollars = _dollars;
+                Bootstrap.Instance.GameData.Gold = _dollars;
                 Bootstrap.Instance.ChangeGameState(GameStateID.Win);
                 platform.OnReached();
             }

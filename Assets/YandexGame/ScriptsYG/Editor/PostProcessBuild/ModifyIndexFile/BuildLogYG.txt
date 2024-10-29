@@ -1,0 +1,2 @@
+Build path: F:/Unity Projects/Shooter-Rush/Builds/build
+Build number: 1

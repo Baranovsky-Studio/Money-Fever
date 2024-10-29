@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using Pocket_Snake;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class LoseUIScreen : UIScreen
 {
@@ -17,10 +18,9 @@ public class LoseUIScreen : UIScreen
 
     private void OnButtonTryAgainClick()
     {
-        
         Bootstrap.Instance.ChangeGameState(GameStateID.Menu);
         Bootstrap.Instance.GetSystem<LoadLevelSystem>().LoadLevel();
        
-        Advertisement.Instance.ShowInterstitial();
+        YandexGame.FullscreenShow();
     }
 }

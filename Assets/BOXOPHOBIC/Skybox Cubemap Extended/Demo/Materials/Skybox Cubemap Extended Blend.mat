@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Skybox Cubemap Extended Blend
   m_Shader: {fileID: 4800000, guid: 7705790d9e8e16344ad5d7960c568904, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -85,7 +88,7 @@ Material:
     - _Advancedd: 1
     - _BumpScale: 1
     - _CUBEMAPP: 1
-    - _CubemapPosition: -0.39
+    - _CubemapPosition: -0.24
     - _CubemapTransition: 0.77
     - _Cubemapp: 1
     - _Cutoff: 0.5
@@ -125,5 +128,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tex_HDR: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _TintColor: {r: 0.4716981, g: 0.38492346, b: 0.38492346, a: 1}
   m_BuildTextureStacks: []

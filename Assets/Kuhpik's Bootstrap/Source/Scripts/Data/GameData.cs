@@ -12,7 +12,18 @@ namespace Kuhpik
         // public float LevelProgress;
         // public Enemy[] Enemies;
 
-        public float Dollars;
+        public float Gold
+        {
+            get { return _gold; }
+            set
+            {
+                _gold = value; 
+                OnGoldCountChanged?.Invoke();
+            }
+        }
+
+        private float _gold;
+        public Action OnGoldCountChanged;
 
         public float StartDollars;
         public float Speed;

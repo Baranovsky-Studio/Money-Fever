@@ -5,6 +5,7 @@ using Pocket_Snake;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 public class WinUIScreen : UIScreen
 {
@@ -19,14 +20,14 @@ public class WinUIScreen : UIScreen
     {
         _next.onClick.AddListener(OnButtonNextClick);
         _claimX2.onClick.AddListener(OnButtonClaimX2Click);
-        Advertisement.Instance.OnRewardedComplete += OnRewardedAdShown;
+        YandexGame.RewardVideoEvent += OnRewardedAdShown;
     }
 
     public override void Open()
     {
         Bootstrap.Instance.PlayerData.GameId++;
         Bootstrap.Instance.PlayerData.LevelId++;
-        Bootstrap.Instance.GetSystem<ResourcesSystem>().AddResourceCount(ResourcesSystem.ResourceType.Banknotes, (int) Bootstrap.Instance.GameData.Dollars);
+        Bootstrap.Instance.GetSystem<ResourcesSystem>().AddResourceCount(ResourcesSystem.ResourceType.Banknotes, (int) Bootstrap.Instance.GameData.Gold);
         
         if (Bootstrap.Instance.PlayerData.LevelId > SceneManager.sceneCountInBuildSettings - 1)
         {
@@ -34,7 +35,7 @@ public class WinUIScreen : UIScreen
         }
         Bootstrap.Instance.SaveGame();
         
-        _counter.SetValue((int) Bootstrap.Instance.GameData.Dollars);
+        _counter.SetValue((int) Bootstrap.Instance.GameData.Gold);
         _claimX2.gameObject.SetActive(true);
         
         base.Open();
@@ -44,22 +45,22 @@ public class WinUIScreen : UIScreen
     {
         Bootstrap.Instance.ChangeGameState(GameStateID.Menu);
         Bootstrap.Instance.GetSystem<LoadLevelSystem>().LoadLevel();
-        Advertisement.Instance.ShowInterstitial();
+        YandexGame.FullscreenShow();
     }
 
     private void OnButtonClaimX2Click()
     {
-        Advertisement.Instance.ShowRewarded(99);
+        YandexGame.RewVideoShow(99);
     }
     
     private void OnRewardedAdShown(int id)
     {
         if (id == 99)
         {
-            Bootstrap.Instance.GetSystem<ResourcesSystem>().AddResourceCount(ResourcesSystem.ResourceType.Banknotes, (int) Bootstrap.Instance.GameData.Dollars);
+            Bootstrap.Instance.GetSystem<ResourcesSystem>().AddResourceCount(ResourcesSystem.ResourceType.Banknotes, (int) Bootstrap.Instance.GameData.Gold);
             
             _claimX2.gameObject.SetActive(false);
-            _counter.SetValue((int) Bootstrap.Instance.GameData.Dollars * 2);
+            _counter.SetValue((int) Bootstrap.Instance.GameData.Gold * 2);
         }
     }
 }
