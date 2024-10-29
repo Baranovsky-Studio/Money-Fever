@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
+        if (Bootstrap.Instance == null) return;
         Bootstrap.Instance.StateEnterEvent -= OnGameStateChanged;
     }
 
@@ -52,10 +53,8 @@ public class Player : MonoBehaviour
 
        if (Input.GetMouseButton(0))
        {
-           var clampedPos = Mathf.Clamp(transform.position.z + -Input.GetAxis("Mouse X") * _sidesSpeed * _speed,
-               -_sidePos, _sidePos);
-           transform.position = Vector3.MoveTowards(transform.position,
-               new Vector3(transform.position.x, transform.position.y, clampedPos), 1f);
+           var clampedPos = Mathf.Clamp(transform.position.z + -Input.GetAxis("Mouse X") * _sidesSpeed * _speed * Time.deltaTime, -_sidePos, _sidePos);
+           transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, clampedPos), 1f);
        }
 
        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
@@ -70,7 +69,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Finish"))
         {
-            _speed *= 1.4f;
+            _speed *= 1.3f;
         }
 
         if (other.CompareTag("Finish Platform"))

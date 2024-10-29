@@ -50,7 +50,7 @@ public class WinUIScreen : UIScreen
 
     private void OnButtonClaimX2Click()
     {
-        YandexGame.RewVideoShow(99);
+        YandexGame.Instance._RewardedShow(99);
     }
     
     private void OnRewardedAdShown(int id)

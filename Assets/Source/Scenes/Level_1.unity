@@ -1191,7 +1191,7 @@ MonoBehaviour:
   _cart: {fileID: 919132148478468216}
   _audioSource: {fileID: 169621820}
   _speed: 14
-  _sidesSpeed: 0.15
+  _sidesSpeed: 2
   _sidePos: 3.4
 --- !u!136 &169621818
 CapsuleCollider:
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 20
-  _rotationBackSpeed: 30
+  _rotationBackSpeed: 50
 --- !u!1 &1415393618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,8 +3918,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 827972003078867204, guid: b3bb695754d59e44aa74b68684ddf9df, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 272.73187
+      objectReference: {fileID: 0}
+    - target: {fileID: 827972003078867204, guid: b3bb695754d59e44aa74b68684ddf9df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.4805
+      value: 106.7438
       objectReference: {fileID: 0}
     - target: {fileID: 827972003078867204, guid: b3bb695754d59e44aa74b68684ddf9df, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4053,6 +4057,8 @@ MonoBehaviour:
   - {fileID: 421875807}
   _goldPrefab: {fileID: 2182041924242187985, guid: 8457d0652c1c6124480a6a7edda8c4db, type: 3}
   _audioSource: {fileID: 919132148478468218}
+  _stonksUp: {fileID: 8300000, guid: 3e405125c66529444825f786e3a6c040, type: 3}
+  _stonksDown: {fileID: 8300000, guid: aa9f7cb1264e1df498ec43eb98fba061, type: 3}
   _startGoldCount: 16
   _maxGoldCount: 256
   _goldCount: 0

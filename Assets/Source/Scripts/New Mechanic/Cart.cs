@@ -16,6 +16,9 @@ public class Cart : MonoBehaviour
     [BoxGroup("LINKS")] [SerializeField] 
     private AudioSource _audioSource;
 
+    [BoxGroup("AUDIO")] [SerializeField] 
+    private AudioClip _stonksUp, _stonksDown;
+
     [BoxGroup("SETTINGS")] [SerializeField]
     private int _startGoldCount;
     [BoxGroup("SETTINGS")] [SerializeField]
@@ -40,22 +43,40 @@ public class Cart : MonoBehaviour
     
     private int _lastSpawnPoint;
     private int _layer = 1;
+    private bool _playSound = false;
+    private bool _isUpgrade = true;
 
     public Action<int> OnValueChanged;
 
     private void Start()
     {
         GoldCount = _startGoldCount;
+        _playSound = true;
     }
 
     private void OnUpdateGoldValue()
     {
         UpdateVisibility();
+        
+        if (Bootstrap.Instance.GameData.Gold > GoldCount)
+        {
+            _animator.SetTrigger("SizeDown");
+            if (_playSound)
+            {
+                _audioSource.PlayOneShot(_stonksDown);
+            }
+        }
+        else
+        {
+            _animator.SetTrigger("SizeUp");
+            if (_playSound)
+            {
+                _audioSource.PlayOneShot(_stonksUp);
+            }
+        }
+
         Bootstrap.Instance.GameData.Gold = GoldCount;
         OnValueChanged?.Invoke(GoldCount);
-        
-        _animator.SetTrigger("Size");
-        _audioSource.Play();
 
         if (GoldCount == 0)
         {
@@ -69,9 +90,8 @@ public class Cart : MonoBehaviour
         {
             if (_spawnedGold.Count < GoldCount)
             {
-                var goldItem = Instantiate(_goldPrefab, _spawnPoints[_lastSpawnPoint].transform.position,
-                        _spawnPoints[_lastSpawnPoint].transform.rotation, _spawnPoints[_lastSpawnPoint].transform)
-                    .GetComponent<Gold>();
+                Debug.Log(_lastSpawnPoint);
+                var goldItem = Instantiate(_goldPrefab, _spawnPoints[_lastSpawnPoint].transform.position, _spawnPoints[_lastSpawnPoint].transform.rotation, _spawnPoints[_lastSpawnPoint].transform).GetComponent<Gold>();
                 goldItem.transform.localPosition = new Vector3(0f, _layer * 0.2f, 0f);
                 _spawnedGold.Add(goldItem);
 
@@ -92,7 +112,7 @@ public class Cart : MonoBehaviour
                 _spawnedGold.RemoveAt(_spawnedGold.Count - 1);
 
                 _lastSpawnPoint--;
-                if (_lastSpawnPoint == 0)
+                if (_lastSpawnPoint <= 0)
                 {
                     _lastSpawnPoint = 7;
                 }

@@ -9,11 +9,19 @@ public class LoseUIScreen : UIScreen
 {
     [BoxGroup("LINKS")] [SerializeField] 
     private Button _tryAgain;
+    [BoxGroup("LINKS")] [SerializeField]
+    private AudioSource _audioSource;
 
     public override void Subscribe()
     {
         _tryAgain.onClick.AddListener(OnButtonTryAgainClick);
         base.Subscribe();
+    }
+
+    public override void Open()
+    {
+        base.Open();
+        _audioSource.Play();
     }
 
     private void OnButtonTryAgainClick()
