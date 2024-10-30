@@ -90,7 +90,6 @@ public class Cart : MonoBehaviour
         {
             if (_spawnedGold.Count < GoldCount)
             {
-                Debug.Log(_lastSpawnPoint);
                 var goldItem = Instantiate(_goldPrefab, _spawnPoints[_lastSpawnPoint].transform.position, _spawnPoints[_lastSpawnPoint].transform.rotation, _spawnPoints[_lastSpawnPoint].transform).GetComponent<Gold>();
                 goldItem.transform.localPosition = new Vector3(0f, _layer * 0.2f, 0f);
                 _spawnedGold.Add(goldItem);

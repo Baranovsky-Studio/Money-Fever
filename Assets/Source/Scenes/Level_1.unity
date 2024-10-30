@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2bd8959f5fbd3644aa33af1a155fc147, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4385,7 +4385,25 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8134294757061726033, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 84337589421602489, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 3227066131436508511, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2782449295660989121, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5571691048981051665, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5800379633317059906, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8593402625163979322, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4677285179275528941, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2967236083952621281, guid: e2d9796e6298178439db8d6aafb89374, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e2d9796e6298178439db8d6aafb89374, type: 3}

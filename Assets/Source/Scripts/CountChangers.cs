@@ -1,7 +1,9 @@
 using System;
 using NaughtyAttributes;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -73,10 +75,14 @@ public class CountChangers : MonoBehaviour
                 _countChangers[n + 1]._count = count2;
             }
             
+            #if UNITY_EDITOR
             EditorUtility.SetDirty(_countChangers[n]);
             EditorUtility.SetDirty(_countChangers[n + 1]);
+            #endif
         }
         
+#if UNITY_EDITOR
         EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
     }
 }

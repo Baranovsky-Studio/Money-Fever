@@ -25,13 +25,13 @@
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/New Mechanic/PlayerCameraRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Simple Toon/Shaders/STOutline.shader" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/UI/LoseUIScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Source/Scripts/New Mechanic/Cart.cs" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/New Mechanic/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/UI/WinUIScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/Game/CountChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/Game/Changers.cs" />
-        <option value="$PROJECT_DIR$/Assets/Source/Scripts/CountChangers.cs" />
         <option value="$PROJECT_DIR$/Assets/Source/Scripts/GamePause.cs" />
+        <option value="$PROJECT_DIR$/Assets/Source/Scripts/CountChangers.cs" />
+        <option value="$PROJECT_DIR$/Assets/Source/Scripts/New Mechanic/Cart.cs" />
       </list>
     </option>
   </component>
